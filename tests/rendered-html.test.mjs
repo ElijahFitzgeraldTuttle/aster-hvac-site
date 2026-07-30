@@ -34,10 +34,13 @@ test("server-renders the Aster service site", async () => {
   assert.match(html, /Aster Heating &amp; Air/i);
   assert.match(html, /Quiet comfort/i);
   assert.match(html, /Request my appointment/i);
+  assert.match(html, /Contemporary/);
+  assert.match(html, /Utilitarian/);
+  assert.match(html, /Postmodern/);
   assert.doesNotMatch(html, /codex-preview|react-loading-skeleton/i);
 });
 
 test("includes the production social image", async () => {
-  const image = await readFile(new URL("public/og.png", templateRoot));
+  const image = await readFile(new URL("public/og-styles.png", templateRoot));
   assert.ok(image.byteLength > 100_000);
 });

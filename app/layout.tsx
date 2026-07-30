@@ -31,7 +31,7 @@ export async function generateMetadata(): Promise<Metadata> {
       url: siteUrl,
       images: [
         {
-          url: new URL("/og.png", siteUrl).toString(),
+          url: new URL("/og-styles.png", siteUrl).toString(),
           width: 1672,
           height: 941,
           alt: "Aster Heating & Air — Quiet comfort, beautifully engineered.",
@@ -42,7 +42,7 @@ export async function generateMetadata(): Promise<Metadata> {
       card: "summary_large_image",
       title,
       description,
-      images: [new URL("/og.png", siteUrl).toString()],
+      images: [new URL("/og-styles.png", siteUrl).toString()],
     },
   };
 }
@@ -53,7 +53,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" data-style="contemporary" suppressHydrationWarning>
       <body>{children}</body>
     </html>
   );
